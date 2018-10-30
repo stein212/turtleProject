@@ -71,6 +71,4 @@ def drawAxis(x, y, heading=0):
 drawAxis(-250, -250)
 drawAxis(-250, -250, 90)
 
-
-
 turtle.exitonclick()
