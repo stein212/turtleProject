@@ -18,18 +18,25 @@ with open('Fuel.txt', 'r') as fuelFile:
 		if is_float(line):
 			fuelConsumptions.append(float(line))
 
+fuelConsumptions.sort()
+
+print(fuelConsumptions)
+print()
+
 # Prepare the 10 segments
-lowest = min(fuelConsumptions)
-highest = max(fuelConsumptions)
+lowest = fuelConsumptions[0]
+highest = fuelConsumptions[-1]
 
 print(lowest)
 print(highest)
+print()
 
 startRange = math.floor(lowest)
 endRange = math.ceil(highest)
 
 print(startRange)
 print(endRange)
+print()
 
 segments = []
 segmentRange = (endRange - startRange) / 10
@@ -37,6 +44,7 @@ for i in range(10):
 	segments.append(round(startRange + segmentRange * (i+1), 2))
 
 print(segments)
+print()
 
 # sort the data into the 10 segments
 sortedData = {}
@@ -44,15 +52,13 @@ for segment in segments:
 	sortedData[segment] = []
 
 print(sortedData)
+print()
 
-for i in fuelConsumptions:
-	prevSegment = None
-	for segment in segments:
-		if i > segment:
-			continue
-		else:
-			sortedData[segment].append(i)
-			break
-		prevSegment = segment
+j = 0
+for fuelConsumption in fuelConsumptions:
+	if fuelConsumption > segments[j]:
+		j += 1
+	sortedData[segments[j]].append(fuelConsumption)
 
 print(sortedData)
+print()
