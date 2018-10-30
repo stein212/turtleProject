@@ -41,7 +41,7 @@ print(segments)
 # sort the data into the 10 segments
 sortedData = {}
 for segment in segments:
-	sortedData[f"{segment}"] = []
+	sortedData[segment] = []
 
 print(sortedData)
 
@@ -51,7 +51,7 @@ for i in fuelConsumptions:
 		if i > segment:
 			continue
 		else:
-			sortedData[f"{segment}"].append(i)
+			sortedData[segment].append(i)
 			break
 		prevSegment = segment
 
