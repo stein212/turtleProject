@@ -7,7 +7,7 @@ turtle.ht() # or turtle.hideturtle()
 turtle.speed(0)
 
 # set up the screen
-turtle.setup(width=600, height=600, startx=0, starty=0) # add 50 for padding
+turtle.setup(width=600, height=600, startx=0, starty=0) # add 100 for padding
 turtle.screensize(canvwidth=500, canvheight=500)
 turtle.title("Draw Axes")
 
