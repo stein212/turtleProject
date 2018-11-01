@@ -126,6 +126,7 @@ def drawAxis(x, y, heading=0):
 
 		move(-60, canvas["height"] / -2 - 30)
 		turtle.write("Fuel Consumption Segments")
+
 	elif heading is 90:
 		for i in range(maxCount):
 			turtle.pendown()
@@ -134,6 +135,7 @@ def drawAxis(x, y, heading=0):
 			turtle.forward(canvas["height"] / maxCount)
 		turtle.pendown()
 		drawAxisTick(i+1, 90)
+    
 		move(canvas["width"] / -2 - 50, 0)
 		turtle.write("Count")
 			
