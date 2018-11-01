@@ -52,8 +52,8 @@ maxCount = len(sortedData[max(sortedData, key=lambda k : len(sortedData[k]))])
 colors = ["#ff0000", "#ff0091", "#ff01dd", "#0000ff", "#049fff", "#04eaff", "#38ff01", "#fffb00", "#ffa600", "#ff6a00"]
 
 canvas = {
-	"height": 90, # min 90 for given dataset
-	"width": 370, # min 370 for given dataset
+	"height": 400, # min 90 for given dataset
+	"width": 500, # min 370 for given dataset
 }
 
 # hide turtle
@@ -62,7 +62,7 @@ turtle.ht() # or turtle.hideturtle()
 # set turtle speed to fastest
 turtle.speed(0)
 
-turtle.setup(width=canvas["width"]+100, height=canvas["height"]+100) # add 100 for padding
+turtle.setup(width=canvas["width"]+120, height=canvas["height"]+120) # add 120 for padding
 turtle.screensize(canvwidth=canvas["width"], canvheight=canvas["height"])
 turtle.title("Fuel Consumption in 10 groups")
 
@@ -123,14 +123,21 @@ def drawAxis(x, y, heading=0):
 			startOfSegment = key
 			turtle.penup()
 			turtle.forward(canvas["width"]/len(sortedData))
+
+		move(-60, canvas["height"] / -2 - 30)
+		turtle.write("Fuel Consumption Segments")
+
 	elif heading is 90:
 		for i in range(maxCount):
 			turtle.pendown()
 			drawAxisTick(i, 90)
 			turtle.penup()
-			turtle.forward(canvas["height"]/maxCount)
+			turtle.forward(canvas["height"] / maxCount)
 		turtle.pendown()
 		drawAxisTick(i+1, 90)
+    
+		move(canvas["width"] / -2 - 50, 0)
+		turtle.write("Count")
 			
 def drawBar(x, y, number, height, color):
 	move(x, y)
